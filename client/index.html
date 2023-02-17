@@ -86,7 +86,33 @@
     </div>
     <div class="offcanvas-body">
       <div>
-        I will not close if you click outside of me.
+        <form onsubmit="app.pokemonsController.createPokemon()">
+          <div class="col-12 form-floating my-3">
+            <input class="form-control" type="text" placeholder="Name..." name="name" id="name">
+            <label for="name">Put Pokemon Name Here!</label>
+          </div>
+
+
+          <div class="col-12 form-floating my-3">
+            <input class="form-control" type="text" placeholder="Image URL..." maxlength="1000" name="imgUrl"
+              id="imgUrl">
+            <label for="name">Put Pokemon Image Here!</label>
+          </div>
+
+
+          <div class="col-12 my-3">
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" name="isStarter" id="isStarter">
+              <label for="isStarter" class="form-check-label">Is the Pokemon a starter?</label>
+            </div>
+          </div>
+
+
+          <div>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="staticBackdrop">SUBMIT</button>
+          </div>
+
+        </form>
       </div>
     </div>
   </div>
