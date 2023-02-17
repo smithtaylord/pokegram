@@ -9,19 +9,21 @@ body {
   flex-direction: column;
   min-height: 100vh;
   background-color: $body-bg;
+  background-image: url(https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg);
+  background-size: cover;
 }
 
 main {
   flex-grow: 1;
 }
-p {
-  color: red;
-}
+
 .pokemonCard {
   border: 10px solid #ffcb05;
   box-shadow: 20px 10px goldenrod;
   border-radius: 25px;
 }
 
-
-
+.pokeimg {
+  min-height: 25vh;
+  width: auto;
+}
