@@ -1,6 +1,15 @@
 import { dbContext } from "../db/DbContext"
+import { BadRequest } from "../utils/Errors"
 
 class PokemonsService{
+  async getPokemonById(pokemonId) {
+    const pokemon = await dbContext.Pokemons.findById(pokemonId)
+    // NOTE future virtuals 
+    if (!pokemon) {
+      throw new BadRequest("This Pokemon is not found! Very sad!")
+    }
+    return pokemon
+  }
  
   async getAllPokemons() {
     const pokemons = await dbContext.Pokemons.find()

@@ -7,11 +7,12 @@ export class PokemonsController extends BaseController {
     super('api/pokemon')
     this.router
       .get('', this.getAllPokemons)
+      .get('/:pokemonId', this.getPokemonById)
       .use(Auth0Provider.getAuthorizedUserInfo)
       // NOTE This adds basic user security! :) 
       .post('', this.createPokemon)
   }
- 
+
   async getAllPokemons(req, res, next) {
     try {
       const pokemons = await pokemonsService.getAllPokemons()
@@ -21,6 +22,15 @@ export class PokemonsController extends BaseController {
     }
   }
 
+  async getPokemonById(req, res, next) {
+    try {
+      const pokemonId = req.params.pokemonId
+      const pokemon = await pokemonsService.getPokemonById(pokemonId)
+      return res.send(pokemon)
+    } catch (error) {
+      next(error)
+    }
+  }
  async createPokemon(req, res, next) {
     try {
       const user = req.userInfo
