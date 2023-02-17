@@ -18,5 +18,9 @@
     "titleBar.inactiveBackground": "#45845099",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#458450"
+  "peacock.color": "#458450",
+  "cSpell.words": [
+    "pokemons",
+    "virtuals"
+  ]
 }
