@@ -10,11 +10,18 @@ function _drawPokemonsCards() {
     setHTML('pokemon-cards', template)
 }
 
+function _drawActivePokemon() {
+    // @ts-ignore
+    setHTML('activePokemon', appState.activePokemon.activePokemonTemplate)
+
+}
+
 export class PokemonsController {
     constructor() {
         console.log('Hello from the Pokemons Controller');
         this.getAllPokemon()
         appState.on('pokemons', _drawPokemonsCards)
+        appState.on('activePokemon', _drawActivePokemon)
     }
 
     async getAllPokemon() {

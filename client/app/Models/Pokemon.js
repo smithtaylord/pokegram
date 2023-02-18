@@ -16,7 +16,7 @@ export class Pokemon {
           ${this.name}
         </p>
       <div class="cardImgBorder">
-        <img type="button" onclick="app.pokemonsController.setActivePokemon('${this.id}')"class="img-fluid pokeimg"
+        <img data-bs-toggle="modal" data-bs-target="#pokemonModal" type="button" onclick="app.pokemonsController.setActivePokemon('${this.id}')"class="img-fluid pokeimg"
           src="${this.imgUrl}"
           alt="${this.name}">
       </div>
@@ -32,7 +32,35 @@ export class Pokemon {
 
   get activePokemonTemplate() {
     return `
-    
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">${this.name}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-6">
+                <img class="img-fluid" src="${this.imgUrl}" alt="">
+              </div>
+              <div class="col-6">
+                <h3>Comments and stuff</h3>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                <h3>Votes ${this.voteCount}</h3>
+                <h3>Stats</h3>
+                <h3>Stats</h3>
+              </div>
+              <div class="col-6">
+                <h3>Comment Entry</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger"><i class="mdi mdi-delete-outline fs-3"></i></button>
+        </div>
     `
   }
 }
