@@ -53,7 +53,15 @@ export class Pokemon {
                 <h3>Stats</h3>
               </div>
               <div class="col-6">
-                <h3>Comment Entry</h3>
+                <h4>
+                <form>
+                  <div>
+                  <label for="comment" class="form-label"></label>
+                  <input type="text" class="form-control" id="comment" placeholder="Enter Comment Here">
+                  </div>
+                  <button type="button" class="btn btn-primary">Submit</button>
+                </form>
+                </h4>
               </div>
             </div>
           </div>
