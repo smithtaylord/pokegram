@@ -13740,6 +13740,11 @@ body {
   background-size: cover;
 }
 
+.cardImgBorder {
+  border: 4px solid #c7a008;
+  box-shadow: 2px 2px #3c5aa6;
+}
+
 main {
   flex-grow: 1;
 }
@@ -13751,7 +13756,7 @@ main {
 }
 
 .pokeimg {
-  min-height: 25vh;
+  min-height: 20vh;
   width: auto;
 }
 

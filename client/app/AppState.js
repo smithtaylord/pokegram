@@ -12,6 +12,8 @@ class AppState extends EventEmitter {
   /** @type {import('./Models/Pokemon').Pokemon[]} */
   pokemons = []
   socketData = []
+  /** @type {import('./Models/Pokemon').Pokemon | null} */
+  activePokemon = null
 }
 
 export const appState = new Proxy(new AppState(), {

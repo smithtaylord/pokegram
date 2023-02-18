@@ -14,8 +14,8 @@ body {
 }
 
 .cardImgBorder {
-  border: 10px solid #c7a008 !important;
-  box-shadow: 4px 2px black !important;
+  border: 4px solid #c7a008;
+  box-shadow: 2px 2px #3c5aa6;
 }
 
 main {
@@ -31,6 +31,6 @@ main {
 
 
 .pokeimg {
-  min-height: 25vh;
+  min-height: 20vh;
   width: auto;
 }

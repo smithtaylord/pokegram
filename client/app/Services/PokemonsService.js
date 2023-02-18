@@ -3,6 +3,13 @@ import { Pokemon } from "../Models/Pokemon.js";
 import { server } from "./AxiosService.js"
 
 class PokemonsService {
+    async setActivePokemon(pokemonId) {
+        let pokemon = appState.pokemons.find(p => p.id == pokemonId)
+        // @ts-ignore
+        appState.activePokemon = pokemon
+        console.log(appState.activePokemon);
+
+    }
     async createPokemon(newPokemon) {
         const res = await server.post('api/pokemon', newPokemon)
         // console.log(res.data, 'CREATED POKEMAN :)))');

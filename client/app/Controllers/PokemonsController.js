@@ -25,20 +25,34 @@ export class PokemonsController {
         }
     }
 
-    async createPokemon(){
+    async createPokemon() {
         try {
+            // @ts-ignore
             window.event.preventDefault();
+            // @ts-ignore
             let form = window.event.target;
             let newPokemon = getFormData(form);
             // console.log(newPokemon);
+            // @ts-ignore
             if (newPokemon.isStarter == "on") {
-                newPokemon.isStarter = true 
+                // @ts-ignore
+                newPokemon.isStarter = true
             } else {
+                // @ts-ignore
                 newPokemon.isStarter = false
             }
             await pokemonsService.createPokemon(newPokemon)
         } catch (error) {
             Pop.error(error.message)
+        }
+    }
+
+    async setActivePokemon(pokemonId) {
+        try {
+            await pokemonsService.setActivePokemon(pokemonId)
+        } catch (error) {
+            Pop.error(error)
+            console.error(error)
         }
     }
 
