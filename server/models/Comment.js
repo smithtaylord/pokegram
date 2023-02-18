@@ -4,7 +4,7 @@ let ObjectId = Schema.Types.ObjectId
 
 export const CommentSchema = new Schema (
     {
-        description: { type: String, required: true, minLength: 10, maxLength: 1000 },
+        description: { type: String, required: true, minLength: 1, maxLength: 1000 },
 
         pokemonId: { type: ObjectId, ref: 'Pokemon' },
         trainerId: { type: ObjectId, ref: "Account" },

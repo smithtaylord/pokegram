@@ -41,6 +41,7 @@ class PokemonsService {
   async createPokemon(pokemonData) {
     const newPokemon = await dbContext.Pokemons.create(pokemonData)
     // NOTE more future virtuals will also go here! yippee. 
+    
     return newPokemon
   }
 }

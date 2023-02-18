@@ -16,18 +16,40 @@ function _drawActivePokemon() {
 
 }
 
+function _drawPokemonComments() {
+    let template = ''
+    appState.activePokemonComments.forEach(c => template += c.commentsTemplate)
+    setHTML('pokemonComments', template)
+}
+
 export class PokemonsController {
     constructor() {
         console.log('Hello from the Pokemons Controller');
         this.getAllPokemon()
         appState.on('pokemons', _drawPokemonsCards)
         appState.on('activePokemon', _drawActivePokemon)
-        this.getComments()
+        console.log(appState.account)
+        appState.on('activePokemonComments', _drawPokemonComments)
     }
+
+    async createComment() {
+        try {
+            window.event.preventDefault()
+            const form = window.event.target
+            const formData = getFormData(form)
+            await pokemonsService.createComment(formData)
+            console.log(formData)
+            form.reset() 
+        } catch (error) {
+            Pop.error(error.message)
+            console.error(error)
+        }
+    }
+    
 
     async getComments() {
         try {
-            await pokemonsService.getComments()
+            await pokemonsService.getComments(appState.activePokemon.id)
         } catch (error) {
             Pop.error(error)
         }
@@ -75,6 +97,7 @@ export class PokemonsController {
     async setActivePokemon(pokemonId) {
         try {
             await pokemonsService.setActivePokemon(pokemonId)
+            this.getComments()
         } catch (error) {
             Pop.error(error)
             console.error(error)

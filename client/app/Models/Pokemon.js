@@ -42,7 +42,7 @@ export class Pokemon {
               <div class="col-6">
                 <img class="img-fluid" src="${this.imgUrl}" alt="">
               </div>
-              <div class="col-6">
+              <div class="col-6" id="pokemonComments">
                 <h3>Comments and stuff</h3>
               </div>
             </div>
@@ -54,12 +54,12 @@ export class Pokemon {
               </div>
               <div class="col-6">
                 <h4>
-                <form>
+                <form onsubmit="app.pokemonsController.createComment()">
                   <div>
                   <label for="comment" class="form-label"></label>
-                  <input type="text" class="form-control" id="comment" placeholder="Enter Comment Here">
+                  <input type="text" class="form-control" id="description" name="description" placeholder="Enter Comment Here">
                   </div>
-                  <button type="button" class="btn btn-primary">Submit</button>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
                 </h4>
               </div>

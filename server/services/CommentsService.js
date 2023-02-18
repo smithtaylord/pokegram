@@ -21,6 +21,8 @@ class CommentsService {
       //    }
 
       const comment = await dbContext.Comments.create(newComment)
+      await comment
+      .populate('trainer', 'name')
       return comment
 
 
