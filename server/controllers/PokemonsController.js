@@ -11,6 +11,29 @@ export class PokemonsController extends BaseController {
       .use(Auth0Provider.getAuthorizedUserInfo)
       // NOTE This adds basic user security! :) 
       .post('', this.createPokemon)
+      .put('/:pokemonId', this.editPokemon)
+      .delete('/:pokemonId', this.deletePokemonById)
+  }
+
+  async deletePokemonById(req, res, next) {
+    try {
+      const pokemonId = req.params.pokemonId
+      const pokemon = await pokemonsService.deletePokemonById(pokemonId)
+      return res.send(pokemon)
+    } catch (error) {
+      next(error)
+    }
+  }
+
+  async editPokemon(req, res, next) {
+    try {
+      const pokemonData = req.body
+      const pokemonId = req.params.pokemonId
+      const pokemon = await pokemonsService.editPokemon(pokemonData, pokemonId)
+      return res.send(pokemon)
+    } catch (error) {
+      next(error)
+    }
   }
 
   async getAllPokemons(req, res, next) {
