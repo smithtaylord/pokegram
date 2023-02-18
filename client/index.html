@@ -20,27 +20,37 @@
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <a class="navbar-brand" href="#">
-
-        <span class="ml-2 mdi mdi-pokeball logo-text text-secondary">pokegram</span>
-      </a>
-      <i class="mdi mdi-pokeball fs-1 text-danger px-5" type="button" data-bs-toggle="offcanvas"
-        data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
-
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <!-- NAVLINKS -->
-        </div>
+  <header class="container-fluid">
+    <div class="row">
+      <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
+      <div class="col-4">
+          <a class="navbar-brand" href="#">
+    
+            <span class="ml-2 mdi mdi-pokeball logo-text text-secondary">pokegram</span>
+          </a>
       </div>
-      <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+      <div class="col-4 text-center">
+        <button class="btn btn-secondary btn-sm btn-pop">
+          <!-- TODO fix button damnit -->
+          <i class="mdi mdi-pokeball fs-1 text-primary px-5 " type="button" data-bs-toggle="offcanvas"
+            data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
+        </button>
+      </div>
+
+      <div class="col-4">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav">
+            <!-- NAVLINKS -->
+          </div>
+        </div>
+        <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+      </div>
     </nav>
+    </div>
   </header>
 
 
@@ -160,7 +170,7 @@
 
 
           <div>
-            <button type="submit" class="btn btn-primary" data-bs-dismiss="staticBackdrop">SUBMIT</button>
+            <button type="submit" class="btn btn-primary" data-bs-dismiss="offcanvas">SUBMIT</button>
           </div>
 
         </form>

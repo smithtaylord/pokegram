@@ -4,7 +4,7 @@ export class Pokemon {
     this.name = data.name
     this.imgUrl = data.imgUrl
     this.isStarter = data.isStarter
-    this.voteCount = data.voteCount
+    this.voteCount = data.voteCount || 0
   }
 
 
@@ -59,7 +59,7 @@ export class Pokemon {
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" onclick="app.pokemonsController.deletePokemon('${this.id}')"><i class="mdi mdi-delete-outline fs-3"></i></button>
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="app.pokemonsController.deletePokemon('${this.id}')"><i class="mdi mdi-delete-outline fs-3"></i></button>
         </div>
     `
   }
