@@ -1,7 +1,7 @@
 import { dbContext } from "../db/DbContext"
 import { BadRequest } from "../utils/Errors"
 
-class PokemonsService{
+class PokemonsService {
   async editPokemon(pokemonData, pokemonId) {
     const pokemon = await dbContext.Pokemons.findById(pokemonId)
     if (!pokemon) {
@@ -21,19 +21,21 @@ class PokemonsService{
 
   async getPokemonById(pokemonId) {
     const pokemon = await dbContext.Pokemons.findById(pokemonId)
-    .populate('voteCount')
+      .populate('voteCount')
+      .populate('comments', 'description')
     if (!pokemon) {
       throw new BadRequest("This Pokemon is not found! Very sad!")
     }
     return pokemon
   }
- 
+
   async getAllPokemons() {
     const pokemons = await dbContext.Pokemons.find()
-    // NOTE future virtuals will go here! 
-    .populate('voteCount')
+      // NOTE future virtuals will go here! 
+      .populate('voteCount')
+      .populate('comments', 'description')
     return pokemons
-  
+
   }
 
   async createPokemon(pokemonData) {
