@@ -29,4 +29,10 @@ export class Pokemon {
         </div>
         `
   }
+
+  get activePokemonTemplate() {
+    return `
+    
+    `
+  }
 }
