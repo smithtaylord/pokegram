@@ -32,6 +32,15 @@ export class PokemonsController {
         }
     }
 
+    async addVoteToPokemon(pokemonId) {
+        try {
+            await pokemonsService.addVoteToPokemon(pokemonId)
+        } catch (error) {
+            Pop.error(error.message)
+            console.error(error)
+        }
+    }
+
     async createPokemon() {
         try {
             // @ts-ignore

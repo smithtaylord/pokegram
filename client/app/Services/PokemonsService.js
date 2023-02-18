@@ -3,6 +3,16 @@ import { Pokemon } from "../Models/Pokemon.js";
 import { server } from "./AxiosService.js"
 
 class PokemonsService {
+    async addVoteToPokemon(pokemonId) {
+        let res = await server.post('api/votes', {pokemonId})
+        let pokemon = appState.pokemons.find(p => p.id == pokemonId)
+        if(pokemon) {
+            pokemon.voteCount++
+        }
+        appState.emit('pokemons')        
+
+    }
+
     async deletePokemon(pokemonId) {
         const res = await server.delete(`api/pokemon/${pokemonId}`)
         console.log('[delete pokemon]', res.data);

@@ -21,7 +21,7 @@ export class Pokemon {
           alt="${this.name}">
       </div>
           <div class="d-flex fs-4 py-3 text-primary justify-content-around">
-              <i type="button" class=" mdi mdi-chevron-up-box-outline" ></i>
+              <i type="button" onclick="app.pokemonsController.addVoteToPokemon('${this.id}')" class=" mdi mdi-chevron-up-box-outline" ></i>
               <p>${this.voteCount}</p>
               <i class="${this.isStarter ? 'mdi mdi-decagram-outline' : ''} "></i>
         </div>
