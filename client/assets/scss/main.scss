@@ -13,6 +13,11 @@ body {
   background-size: cover;
 }
 
+.cardImgBorder {
+  border: 10px solid #c7a008 !important;
+  box-shadow: 4px 2px black !important;
+}
+
 main {
   flex-grow: 1;
 }
@@ -22,6 +27,8 @@ main {
   box-shadow: 20px 10px goldenrod;
   border-radius: 25px;
 }
+
+
 
 .pokeimg {
   min-height: 25vh;

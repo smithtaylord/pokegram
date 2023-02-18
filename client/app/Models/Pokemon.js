@@ -8,12 +8,14 @@ export class Pokemon {
 
 
     get PokemonCardsTemplate() {
-        return `
-        <div class="col-3">
-        <div class="p-5  mt-2 pokemonCard mb-2 bg-light">
+        return /*html*/ `
+        <div class="col-12 col-md-3 p-5  mt-2 pokemonCard mb-2 bg-light">
+        <div>
+      <div class="cardImgBorder">
         <img class="img-fluid pokeimg"
           src="${this.imgUrl}"
           alt="${this.name}">
+      </div>
         <div>
           <div class="d-flex fs-2 text-primary justify-content-around">
 

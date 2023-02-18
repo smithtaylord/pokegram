@@ -5,7 +5,9 @@ import { server } from "./AxiosService.js"
 class PokemonsService {
     async createPokemon(newPokemon) {
         const res = await server.post('api/pokemon', newPokemon)
-        console.log(res.data, 'CREATED POKEMAN :)))');
+        // console.log(res.data, 'CREATED POKEMAN :)))');
+        appState.pokemons.push(new Pokemon(res.data))
+        appState.emit('pokemons')
     }
     async getAllPokemon() {
         const res = await server.get('api/pokemon')
