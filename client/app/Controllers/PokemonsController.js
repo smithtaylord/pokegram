@@ -34,21 +34,25 @@ export class PokemonsController {
 
     async createComment() {
         try {
+            // @ts-ignore
             window.event.preventDefault()
+            // @ts-ignore
             const form = window.event.target
             const formData = getFormData(form)
             await pokemonsService.createComment(formData)
             console.log(formData)
-            form.reset() 
+            // @ts-ignore
+            form.reset()
         } catch (error) {
             Pop.error(error.message)
             console.error(error)
         }
     }
-    
+
 
     async getComments() {
         try {
+            // @ts-ignore
             await pokemonsService.getComments(appState.activePokemon.id)
         } catch (error) {
             Pop.error(error)
@@ -89,6 +93,8 @@ export class PokemonsController {
                 newPokemon.isStarter = false
             }
             await pokemonsService.createPokemon(newPokemon)
+            // @ts-ignore
+            form.reset()
         } catch (error) {
             Pop.error(error.message)
         }

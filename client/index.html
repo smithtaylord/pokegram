@@ -20,36 +20,36 @@
 </head>
 
 <body>
-  <header class="container-fluid">
+  <header class="container-fluid sticky-top">
     <div class="row">
       <nav class="navbar navbar-dark navbar-expand bg-dark text-light">
-      <div class="col-4">
+        <div class="col-4">
           <a class="navbar-brand" href="#">
-    
-            <span class="ml-2 mdi mdi-pokeball logo-text text-secondary">pokegram</span>
-          </a>
-      </div>
-      <div class="col-4 text-center">
-        <button class="btn btn-secondary btn-sm btn-pop">
-          <!-- TODO fix button damnit -->
-          <i class="mdi mdi-pokeball fs-1 text-primary px-5 " type="button" data-bs-toggle="offcanvas"
-            data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
-        </button>
-      </div>
 
-      <div class="col-4">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-          <div class="navbar-nav">
-            <!-- NAVLINKS -->
-          </div>
+            <span class="ml-2 mdi mdi-pokeball logo-text text-secondary px-3"> pokégram</span>
+          </a>
         </div>
-        <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
-      </div>
-    </nav>
+        <div class="col-4 text-center">
+          <button class="btn btn-secondary btn-sm btn-pop">
+            <!-- TODO fix button damnit -->
+            <i class="mdi mdi-pokeball fs-1 text-primary px-5 " type="button" data-bs-toggle="offcanvas"
+              data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"></i>
+          </button>
+        </div>
+
+        <div class="col-4">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <!-- NAVLINKS -->
+            </div>
+          </div>
+          <div class="flex-grow-1 justify-content-end align-items-center d-flex" id="authstate"></div>
+        </div>
+      </nav>
     </div>
   </header>
 
@@ -139,7 +139,7 @@
   <!-- OFFCANVAS HERE -->
 
 
-  <div class="offcanvas offcanvas-start" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
+  <div class="offcanvas offcanvas-start text-dark" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop"
     aria-labelledby="staticBackdropLabel">
     <div class="offcanvas-header">
       <h5 class="offcanvas-title" id="staticBackdropLabel">Post Your favorite pokemon!</h5>
@@ -148,15 +148,15 @@
     <div class="offcanvas-body">
       <div>
         <form onsubmit="app.pokemonsController.createPokemon()">
-          <div class="col-12 form-floating my-3">
-            <input class="form-control" type="text" placeholder="Name..." name="name" id="name">
+          <div class="col-12 form-floating my-3 form-text">
+            <input class="form-control bg-secondary form-text" type="text" placeholder="Name..." name="name" id="name">
             <label for="name">Put Pokemon Name Here!</label>
           </div>
 
 
-          <div class="col-12 form-floating my-3">
-            <input class="form-control" type="text" placeholder="Image URL..." maxlength="1000" name="imgUrl"
-              id="imgUrl">
+          <div class="col-12 form-floating my-3 form-text">
+            <input class="form-control bg-secondary form-text" type="text" placeholder="Image URL..." maxlength="1000"
+              name="imgUrl" id="imgUrl">
             <label for="name">Put Pokemon Image Here!</label>
           </div>
 

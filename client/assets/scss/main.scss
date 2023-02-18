@@ -44,3 +44,12 @@ main {
   font-family: 'Bangers', cursive;
   font-size: 48pt;
 }
+
+.form-text {
+  font-size: 10pt;
+}
+
+#pokemonComments {
+  max-height: 50vh;
+  overflow: auto;
+}
