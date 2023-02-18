@@ -3,6 +3,14 @@ import { Pokemon } from "../Models/Pokemon.js";
 import { server } from "./AxiosService.js"
 
 class PokemonsService {
+    async deletePokemon(pokemonId) {
+        const res = await server.delete(`api/pokemon/${pokemonId}`)
+        console.log('[delete pokemon]', res.data);
+        let pokemonIndex = appState.pokemons.findIndex(p => p.id == pokemonId)
+        appState.pokemons.splice(pokemonIndex, 1)
+        appState.emit('pokemons')
+
+    }
     async setActivePokemon(pokemonId) {
         let pokemon = appState.pokemons.find(p => p.id == pokemonId)
         // @ts-ignore

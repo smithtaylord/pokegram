@@ -63,4 +63,15 @@ export class PokemonsController {
         }
     }
 
+    async deletePokemon(pokemonId) {
+        try {
+            if (await Pop.confirm('Are you sure you want to set this pokemon free?')) {
+                await pokemonsService.deletePokemon(pokemonId)
+            }
+        } catch (error) {
+            Pop.error(error)
+            console.error(error)
+        }
+    }
+
 }

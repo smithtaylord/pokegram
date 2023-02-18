@@ -15,8 +15,8 @@ export class Pokemon {
         <p class="fs-4 fw-bold text-primary">
           ${this.name}
         </p>
-      <div class="cardImgBorder">
-        <img data-bs-toggle="modal" data-bs-target="#pokemonModal" type="button" onclick="app.pokemonsController.setActivePokemon('${this.id}')"class="img-fluid pokeimg"
+      <div class="cardImgBorder d-flex justify-content-center">
+        <img data-bs-toggle="modal" data-bs-target="#pokemonModal" type="button" onclick="app.pokemonsController.setActivePokemon('${this.id}')"class=" p-2 img-fluid pokeimg"
           src="${this.imgUrl}"
           alt="${this.name}">
       </div>
@@ -59,7 +59,7 @@ export class Pokemon {
           </div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger"><i class="mdi mdi-delete-outline fs-3"></i></button>
+          <button type="button" class="btn btn-danger" onclick="app.pokemonsController.deletePokemon('${this.id}')"><i class="mdi mdi-delete-outline fs-3"></i></button>
         </div>
     `
   }

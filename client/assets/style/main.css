@@ -13757,7 +13757,7 @@ main {
 }
 
 .pokeimg {
-  min-height: 20vh;
+  height: 20vh;
   width: auto;
 }
 
