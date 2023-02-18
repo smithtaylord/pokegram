@@ -6,7 +6,7 @@ export const CommentSchema = new Schema (
     {
         description: { type: String, required: true, minLength: 10, maxLength: 1000 },
 
-        pokemonId: { type: String, ObjectId, ref: 'Pokemon', required: true, },
+        pokemonId: { type: ObjectId, ref: 'Pokemon' },
         trainerId: { type: ObjectId, ref: "Account" },
 
     }, 
