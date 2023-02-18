@@ -22,7 +22,7 @@ class PokemonsService {
   async getPokemonById(pokemonId) {
     const pokemon = await dbContext.Pokemons.findById(pokemonId)
       .populate('voteCount')
-      .populate('comments', 'description')
+      .populate('comments',)
     if (!pokemon) {
       throw new BadRequest("This Pokemon is not found! Very sad!")
     }
@@ -33,7 +33,7 @@ class PokemonsService {
     const pokemons = await dbContext.Pokemons.find()
       // NOTE future virtuals will go here! 
       .populate('voteCount')
-      .populate('comments', 'description')
+      .populate('comments',)
     return pokemons
 
   }
