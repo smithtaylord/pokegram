@@ -11,6 +11,7 @@ body {
   background-color: $body-bg;
   background-image: url(https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg);
   background-size: cover;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .cardImgBorder {
@@ -33,4 +34,9 @@ main {
 .pokeimg {
   min-height: 20vh;
   width: auto;
+}
+
+.logo-text {
+  font-family: 'Bangers', cursive;
+  font-size: 48pt;
 }

@@ -20,7 +20,7 @@ export class Pokemon {
           src="${this.imgUrl}"
           alt="${this.name}">
       </div>
-          <div class="d-flex fs-2 text-primary justify-content-around">
+          <div class="d-flex fs-4 py-3 text-primary justify-content-around">
               <i type="button" class=" mdi mdi-chevron-up-box-outline" ></i>
               <p>${this.voteCount}</p>
               <i class="${this.isStarter ? 'mdi mdi-decagram-outline' : ''} "></i>
