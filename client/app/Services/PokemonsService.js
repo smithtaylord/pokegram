@@ -3,6 +3,12 @@ import { Pokemon } from "../Models/Pokemon.js";
 import { server } from "./AxiosService.js"
 
 class PokemonsService {
+    async getComments() {
+        let res = await server.get(`api/pokemon/${pokemon.id}/comments`)
+        console.log('[This is what the comments data looks like]', res.data)
+
+    }
+
     async addVoteToPokemon(pokemonId) {
         let res = await server.post('api/votes', {pokemonId})
         let pokemon = appState.pokemons.find(p => p.id == pokemonId)

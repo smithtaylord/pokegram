@@ -22,6 +22,15 @@ export class PokemonsController {
         this.getAllPokemon()
         appState.on('pokemons', _drawPokemonsCards)
         appState.on('activePokemon', _drawActivePokemon)
+        this.getComments()
+    }
+
+    async getComments() {
+        try {
+            await pokemonsService.getComments()
+        } catch (error) {
+            Pop.error(error)
+        }
     }
 
     async getAllPokemon() {
